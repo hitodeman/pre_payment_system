@@ -1,0 +1,31 @@
+.maxsize {
+    max-height: 60vh;
+    position: relative;
+    border-spacing:0px;
+    border-collapse: collapse;
+}
+
+
+.maxsize th {
+    background: #FFFFFF;
+    position: sticky;
+	top: 0;
+}
+
+.table-striped tbody tr:nth-of-type(2n+1) {
+    background-color: #fff2f2;
+}
+
+.share {
+    background-color: #c1db8d;
+    color: #FFFFFF;
+}
+
+.export {
+    background-color: #c1db8d;
+    color: #FFFFFF;
+}
+
+.tbcolor {
+    background-color:  #ee9e9e;
+}
