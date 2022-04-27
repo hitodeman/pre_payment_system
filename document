@@ -1,0 +1,22 @@
+#polls設定
+
+#model作成
+
+#settings.pyに「polls.apps.PollsConfig」を登録
+python manage.py makemigrations polls
+python manage.py migrate
+
+#admin_userの作成
+python manage.py createsuperuser
+admin
+test@test.com
+admin123
+admin123
+
+#polls/admin.pyに以下のように設定
+    from django.contrib import admin
+    from .models import Question
+    admin.site.register(Question)
+
+#serverを動かす
+python manage.py runserver
