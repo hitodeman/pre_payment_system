@@ -9,11 +9,8 @@ def _index(request):
     return HttpResponse(output)
 
 def index(request):
-    #payment_info_list = T_PAYMENT.objects.order_by('-created_at')
     payment_info_list = T_PAYMENT.objects.select_related('customer_id','payment_kind_id')
-    #AAA.objects.all().filter(columnA1__in=[BBB.objects.values_list('columnB1',flat=True)]
 
     template = loader.get_template('polls/index.html')
     context = {'payment_info_list': payment_info_list,}
-    #print(payment_info_list.customer_name)
     return HttpResponse(template.render(context, request))
