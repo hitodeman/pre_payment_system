@@ -1,0 +1,10 @@
+{% if payment_info_list %}
+    <ul>
+    {% for payment_info in payment_info_list %}
+        <li>{{ payment_info.customer_id.customer_name }}:{{ payment_info.payment_kind_id.payment_kind_name }}</li>
+    {% endfor %}
+    </ul>
+    <div>{{ payment_info_list }}</div>
+{% else %}
+    <p>No polls are available.</p>
+{% endif %}
