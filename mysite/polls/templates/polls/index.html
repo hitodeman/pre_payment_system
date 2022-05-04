@@ -13,15 +13,40 @@
     <span class="skiplink-text">Skip to main content</span>
   </div>
 </a>
-    <!-- ここでナビゲーションバー -->
-    <nav class="my_navbar navbar fixed-top flex-md-nowrap p-0 shadow">
-  <a class="navbar-icon navbar col-sm-3 col-md-2 mr-0" href="#">company</a>
-  
+
+<nav class="my_navbar navbar navbar-expand-md nav-tabs  d-flex align-items-end">
+  <a class="img-fluid" href="#"><!-- 高さ調整必要 -->
+      <img src="{% static 'image/logo01.png' %}" class="logo-img">
+  </a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsiveMenu" aria-controls="responsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="responsiveMenu">
+      <ul class="navbar-nav ml-auto">
+          <li class="nav-item">
+              <a class="nav-link active" href="#">入金管理</a>
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">受注管理</a> 
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">経費管理</a> 
+          </li>
+          <li class="nav-item">
+              <a class="nav-link" href="#">マスタ登録</a> 
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">請求書発行</a> 
+        </li>
+      </ul>
+  </div>
 </nav>
+
 
 <div class="container-fluid">
   <div class="row">
-    <nav class="col-md-2 d-none d-md-block bg-light sidebar my_sidebar_base">
+    <!-- side-bar -->
+    <!-- <nav class="col-md-2 d-none d-md-block bg-light sidebar my_sidebar_base">
       <div class="my_blank">
       </div>
       <div class = "my_sidebar-sticky">
@@ -99,11 +124,11 @@
           </ul>
         </div>
       </div>
-    </nav>
+    </nav> -->
 
-    <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4">
+    <main role="main" class="col-md-12 ml-sm-auto  px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-        <h1 class="h2">Dashboard</h1>
+        <h1 class="h2">入金状況</h1>
         <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
           <span data-feather="calendar"></span>
           This week
@@ -239,5 +264,8 @@
 <script src="/docs/4.3/assets/js/src/application.js"></script>
 <script src="/docs/4.3/assets/js/src/search.js"></script>
 <script src="/docs/4.3/assets/js/src/ie-emulation-modes-warning.js"></script>
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
   </body>
 </html>

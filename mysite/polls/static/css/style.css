@@ -34,7 +34,7 @@
 .my_navbar{
     background-color: #ee9e9e;
     z-index: 10;
-
+    padding-bottom: 0;
 }
 
 .my_sidebar-sticky{
@@ -84,3 +84,12 @@
 .ProductTable tr{
     border:  10px #000;
 }
+
+.nav-item .active{
+  background-color: white;
+} 
+
+.nav-item .nav-link{
+    margin-right:10px;
+    background-color: rgb(255, 209, 209);
+  } 
