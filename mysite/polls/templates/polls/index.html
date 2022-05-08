@@ -24,19 +24,29 @@
   <div class="collapse navbar-collapse" id="responsiveMenu">
       <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-              <a class="nav-link active" href="#">入金管理</a>
+              <a class="nav-link active" href="#">
+                <span data-feather="edit-2"></span>
+                入金管理</a>
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">受注管理</a> 
+              <a class="nav-link" href="#">
+                <span data-feather="edit-2"></span>
+                受注管理</a> 
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">経費管理</a> 
+              <a class="nav-link" href="#">
+                <span data-feather="edit-2"></span>
+                経費管理</a> 
           </li>
           <li class="nav-item">
-              <a class="nav-link" href="#">マスタ登録</a> 
+              <a class="nav-link" href="#">
+                <span data-feather="edit-2"></span>
+                マスタ登録</a> 
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">請求書発行</a> 
+            <a class="nav-link" href="#">
+              <span data-feather="edit-2"></span>
+              請求書発行</a> 
         </li>
       </ul>
   </div>
@@ -135,8 +145,9 @@
         </button>
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">Share</button>
-            <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">Export</button>
+            <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">入力</button>
+            <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">修正</button>
+            <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">印刷</button>
           </div>
           
         </div>
@@ -144,23 +155,27 @@
       <div>
         <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
           <span data-feather="calendar"></span>
-          This week
+          入金日
         </button>
         <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-          <span data-feather="calendar"></span>
-          This week
+          <span data-feather="briefcase"></span>
+          得意先名称
         </button>
         <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-          <span data-feather="calendar"></span>
-          This week
+          <span data-feather="shopping-cart"></span>
+          銀行名
         </button>
         <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-          <span data-feather="calendar"></span>
-          This week
+          <span data-feather="star"></span>
+          種別
         </button>
         <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
-          <span data-feather="calendar"></span>
-          This week
+          <span data-feather="award"></span>
+          金額
+        </button>
+        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+          <span data-feather="edit"></span>
+          メモ
         </button>
       </div>
 
@@ -168,7 +183,7 @@
 
       <!-- <h2>Section title</h2> -->
       <div class="table-responsive border-bottom">
-        <table class="table table-striped table-sm ProductTable">
+        <table class="table table-striped table-sm ProductTable ">
           <thead>
             <tr  class = "my_table">
               <th></th>
@@ -210,7 +225,7 @@
 
 
   <div>
-    <p class="text-right">合計金額 {{payment_total}}円</p>
+    <p class="total-money text-right">合計金額　　　{{payment_total}}円</p>
     
   </div>
 </div>
