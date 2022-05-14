@@ -20,6 +20,7 @@ class T_PAYMENT(models.Model):
     bank_name                   = models.CharField(max_length=200,help_text='取引銀行名')
     payment_money               = models.CharField(max_length=200,help_text='支払い、振り込み金額')
     payment_valid_flg           = models.BooleanField(help_text='有効フラグ（Trueで有効）',default = True)
+    #payment_date                = models.DateTimeField(auto_now_add=True,help_text='支払い日時')
     created_at                  = models.DateTimeField(auto_now_add=True,help_text='作成日時')
     updated_at                  = models.DateTimeField(auto_now=True,help_text='更新日時')
 

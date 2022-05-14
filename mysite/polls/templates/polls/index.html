@@ -21,35 +21,7 @@
   <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#responsiveMenu" aria-controls="responsiveMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="responsiveMenu">
-      <ul class="navbar-nav ml-auto">
-          <li class="nav-item">
-              <a class="nav-link active" href="#">
-                <span data-feather="edit-2"></span>
-                入金管理</a>
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="edit-2"></span>
-                受注管理</a> 
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="edit-2"></span>
-                経費管理</a> 
-          </li>
-          <li class="nav-item">
-              <a class="nav-link" href="#">
-                <span data-feather="edit-2"></span>
-                マスタ登録</a> 
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <span data-feather="edit-2"></span>
-              請求書発行</a> 
-        </li>
-      </ul>
-  </div>
+  {% include "navbar.html" %}
 </nav>
 
 
@@ -139,10 +111,16 @@
     <main role="main" class="col-md-12 ml-sm-auto  px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">入金状況</h1>
-        <button type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
+        <button id="" type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
           <span data-feather="calendar"></span>
-          This week
         </button>
+          <form action="" method="get">
+            <span data-feather="calendar"></span>
+            <input type="text" id="date_sample">
+          </form>
+        
+
+
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
             <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">入力</button>
@@ -282,5 +260,20 @@
 <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-  </body>
+
+<!-- bootstrap-datepickerを読み込む -->
+<link rel="stylesheet" type="text/css" href="../bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker.min.css">
+<script type="text/javascript" src="{% static 'bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js' %}"></script>
+<script type="text/javascript" src="{% static 'bootstrap-datepicker-1.9.0-dist/locales/bootstrap-datepicker.ja.min.js' %}"></script>
+
+<!-- bootstrap-datepickerのjavascriptコード -->
+<script>
+  $('#date_sample').datepicker({
+        format: 'yyyy-mm-dd',
+        language:'ja',
+        startView: 1
+    });
+</script>
+
+</body>
 </html>

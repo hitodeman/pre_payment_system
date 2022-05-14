@@ -97,3 +97,8 @@
 .total-money{
     font-size: 30px;
 }
+
+.datepicker td.disabled, .datepicker td.disabled:hover {
+    border-radius: 0;
+    background-color: rgb(85, 85, 85);
+}
