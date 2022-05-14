@@ -20,3 +20,7 @@ admin123
 
 #serverを動かす
 python manage.py runserver
+
+#接続先
+http://127.0.0.1:8000/admin
+http://127.0.0.1:8000/polls

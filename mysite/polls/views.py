@@ -28,6 +28,7 @@ def index(request):
         ).filter(
             updated_at__range=[begin_date,late_date]
         )
+
     #取得したobjectの合計値を算出する
     payment_total = my_logic.total_payment(payment_info_list)
     template = loader.get_template('polls/index.html')
