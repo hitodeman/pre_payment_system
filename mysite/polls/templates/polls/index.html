@@ -2,10 +2,18 @@
 <!doctype html>
 <html lang="ja" >
   <head>
-    <title>Dashboard Template for Bootstrap · Bootstrap</title>
+    <title>入金管理</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
     <link href="{% static 'css/dashboard.css' %}" rel="stylesheet">
     <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/modal_custom.css' %}" rel="stylesheet">
+    <!--datepicker-->
+    <!--
+    <link rel="stylesheet" type="text/css" href="{% static 'bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker.min.css' %}">
+    <script type="text/javascript" src="{% static 'bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'bootstrap-datepicker-1.9.0-dist/locales/bootstrap-datepicker.ja.min.js' %}"></script>
+-->
+
   </head>
   <body >
     <a id="skippy" class="sr-only sr-only-focusable" href="#content">
@@ -111,20 +119,34 @@
     <main role="main" class="col-md-12 ml-sm-auto  px-4">
       <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
         <h1 class="h2">入金状況</h1>
+        <!--
         <button id="" type="button" class="btn btn-sm btn-outline-secondary dropdown-toggle">
           <span data-feather="calendar"></span>
         </button>
-          <form action="" method="get">
-            <span data-feather="calendar"></span>
-            <input type="text" id="date_sample">
+        -->
+          <form action="" method="post">{% csrf_token %}
+            <div id="dummy">
+              <span data-feather="calendar"></span>
+                <input id="begin_date" type="text" name="begin-date" placeholder="From">
+            </div>
+          </form>
+          <form action="" method="post">{% csrf_token %}
+            <div id="dummy">
+              <span data-feather="calendar"></span>
+                <input id="late_date" type="text" name="late-date" placeholder="To">
+            </div>
           </form>
         
 
 
         <div class="btn-toolbar mb-2 mb-md-0">
           <div class="btn-group mr-2">
-            <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">入力</button>
+
+          {% include "modal.html" %}
+
+            <!--
             <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">修正</button>
+            -->
             <button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary">印刷</button>
           </div>
           
@@ -164,7 +186,9 @@
         <table class="table table-striped table-sm ProductTable ">
           <thead>
             <tr  class = "my_table">
+            <!--
               <th></th>
+              -->
               <th>入金ID</th>
               <th>入金日</th>
               <th>得意先名称</th>
@@ -174,7 +198,13 @@
               <th>メモ</th>
             </tr>
           </thead>
-          <tbody class="my_table_blank rounded-pill">
+          <tbody class="my_table_blank rounded-pill " id="payment_form">
+          <!--
+          <tr id="payment_form">
+
+          </tr>
+          -->
+          <!--
             {% if payment_info_list %}
               {% for payment_info in payment_info_list %}
                   <tr>
@@ -195,6 +225,7 @@
                   </tr>
               {% endfor %}
             {% endif %}
+            -->
           </tbody>
         </table>
       </div>
@@ -202,9 +233,10 @@
   </div>
 
 
-  <div>
+  <div id="payment_totalDisp">
+  <!--
     <p class="total-money text-right">合計金額　　　{{payment_total}}円</p>
-    
+  -->
   </div>
 </div>
 
@@ -216,7 +248,9 @@
   feather.replace()
 </script>
 
+
 <!-- Graphs -->
+<!--
 <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
 <script>
   var ctx = document.getElementById("myChart");
@@ -247,26 +281,39 @@
     }
   });
 </script>
-
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+-->
+<!--
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+-->
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+  crossorigin="anonymous"></script>
 <script>
   window.jQuery || document.write('<script src="/docs/4.3/assets/js/vendor/jquery-slim.min.js"><\/script>')
-</script><script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script><script src="/docs/4.3/assets/js/vendor/anchor.min.js"></script>
+</script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.bundle.min.js"></script>
+<!--
+<script src="/docs/4.3/assets/js/vendor/anchor.min.js"></script>
 <script src="/docs/4.3/assets/js/vendor/clipboard.min.js"></script>
 <script src="/docs/4.3/assets/js/vendor/bs-custom-file-input.min.js"></script>
 <script src="/docs/4.3/assets/js/src/application.js"></script>
 <script src="/docs/4.3/assets/js/src/search.js"></script>
 <script src="/docs/4.3/assets/js/src/ie-emulation-modes-warning.js"></script>
-<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+-->
+<!--
 <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
-
+-->
 <!-- bootstrap-datepickerを読み込む -->
-<link rel="stylesheet" type="text/css" href="../bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker.min.css">
+<link rel="stylesheet" type="text/css" href="{% static 'bootstrap-datepicker-1.9.0-dist/css/bootstrap-datepicker.min.css' %}">
 <script type="text/javascript" src="{% static 'bootstrap-datepicker-1.9.0-dist/js/bootstrap-datepicker.min.js' %}"></script>
 <script type="text/javascript" src="{% static 'bootstrap-datepicker-1.9.0-dist/locales/bootstrap-datepicker.ja.min.js' %}"></script>
 
+
+
 <!-- bootstrap-datepickerのjavascriptコード -->
+<!--today_input.jsに外だし
 <script>
   $('#date_sample').datepicker({
         format: 'yyyy-mm-dd',
@@ -274,6 +321,10 @@
         startView: 1
     });
 </script>
+-->
+<script type="text/javascript" src="{% static 'package_template/searchAndDisplay.js' %}"></script>
+<script type="text/javascript" src="{% static 'package_template/modal.js' %}"></script>
+
 
 </body>
 </html>
