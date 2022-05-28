@@ -16,4 +16,8 @@
 ・新規追加及び編集ボタンのデザイン改修
 ・ソート機能（ajax側の実装のみのはず、onChangeでvalue拾って発火させてソートとbegindate,latedateのvalueをサーバーに渡して
 帰ってきたデータでテーブル作成・・・）
-・
+---------------------------------------------------
+
+2022/05/28 下記コマンド実行後、立ち上げること
+pip install django-widget-tweaks
+pip install django_boost
