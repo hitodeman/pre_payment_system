@@ -1,8 +1,9 @@
+
 .maxsize {
-    max-height: 60vh;
+    max-height: 50vh;
     position: relative;
     border-spacing:0px;
-    border-collapse: collapse;
+    /*border-collapse: collapse;*/
 }
 
 
@@ -10,6 +11,10 @@
     background: #FFFFFF;
     position: sticky;
 	top: 0;
+}
+
+.table-scroll{
+    overflow: auto;
 }
 
 .table-striped tbody tr:nth-of-type(2n+1) {
@@ -49,6 +54,8 @@
     background-color: #c1db8d;
     margin : 10px;
     border-radius: 5px;
+    border-color: #6c757d;
+    color: #6c757d;
 }
 
 
@@ -74,11 +81,28 @@
     padding : 20px;
 }
 
+.my_table th{
+    position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  /* tbody内のセルより手前に表示する */
+  z-index: 1;
+}
+
+.my_table thead th:first-child {
+    /* ヘッダー行内の他のセルより手前に表示する */
+    z-index: 2;
+  }
+
 .ProductTable {
     border:  10px #FFFFFF;
     border-collapse: separate;
     border-spacing: 0px 20px;
+}
 
+.ProductTable th{
+    position: sticky;
+    background-color: #ee9e9e;
 }
 
 .ProductTable tr{
@@ -96,6 +120,12 @@
 
 .total-money{
     font-size: 30px;
+    position: absolute;
+    right: 0;
+    bottom: 100;
+    height: 50px;
+    margin-bottom: -50px;
+    margin-right: 21px;
 }
 
 .datepicker td.disabled, .datepicker td.disabled:hover {
@@ -106,10 +136,29 @@
 
 .datepicker-days th.dow:first-child,
 .datepicker-days td:first-child {
-   color: #f00;
+    color: #f00;
 }
 .datepicker-days th.dow:last-child,
 .datepicker-days td:last-child {
     color: #00f;
 }
 
+
+
+/*
+.form-check input[type="checkbox"]:checked+label::after{
+    content: "";
+    position: absolute;
+    display: block;
+    box-sizing: border-box;
+    width: 18px;
+    height: 9px;
+    margin-top: -9px;
+    top: 50%;
+    left: 3px;
+    transform: rotate(-45deg);
+    border-bottom: 3px solid;
+    border-left: 3px solid;
+    border-color:  #ee9e9e;
+}
+*/

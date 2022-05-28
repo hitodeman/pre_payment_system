@@ -31,6 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'widget_tweaks',
+    'django_boost',
     'polls.apps.PollsConfig',
     'django.contrib.admin',
     'django.contrib.auth',
