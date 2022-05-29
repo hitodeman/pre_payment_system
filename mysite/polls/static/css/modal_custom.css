@@ -1,0 +1,24 @@
+.modal-header .close{
+    padding: 0;
+    margin: 0;
+}
+
+.modal-footer{
+    justify-content : center;
+}
+
+.modal-title {
+    margin-bottom: 10;
+    line-height: 0.5;
+}
+
+.mo_payment_info_id {
+    width: 100px;
+}
+
+.mo_container {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 400px; 
+    }
+

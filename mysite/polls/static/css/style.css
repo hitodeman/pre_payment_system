@@ -29,3 +29,87 @@
 .tbcolor {
     background-color:  #ee9e9e;
 }
+
+
+.my_navbar{
+    background-color: #ee9e9e;
+    z-index: 10;
+    padding-bottom: 0;
+}
+
+.my_sidebar-sticky{
+    background-color: #fff2f2;
+    margin-top: -20px;
+    z-index: 20;
+    padding: 0;
+
+}
+
+.my_button{
+    background-color: #c1db8d;
+    margin : 10px;
+    border-radius: 5px;
+}
+
+
+.navbar-icon{
+    background-color: #c1db8d;
+    
+}
+
+.my_blank{
+    padding: 20px;
+    z-index: 0;
+
+}
+
+.my_sidebar_base{
+    padding: 0 ;
+
+}
+
+.my_table{
+    background-color: #ee9e9e;
+    color : #ececec;
+    padding : 20px;
+}
+
+.ProductTable {
+    border:  10px #FFFFFF;
+    border-collapse: separate;
+    border-spacing: 0px 20px;
+
+}
+
+.ProductTable tr{
+    border:  10px #000;
+}
+
+.nav-item .active{
+  background-color: white;
+} 
+
+.nav-item .nav-link{
+    margin-right:10px;
+    background-color: rgb(255, 209, 209);
+  } 
+
+.total-money{
+    font-size: 30px;
+}
+
+.datepicker td.disabled, .datepicker td.disabled:hover {
+    border-radius: 0;
+    background-color: rgb(85, 85, 85);
+}
+
+
+.datepicker-days th.dow:first-child,
+.datepicker-days td:first-child {
+   color: #f00;
+}
+.datepicker-days th.dow:last-child,
+.datepicker-days td:last-child {
+    color: #00f;
+}
+

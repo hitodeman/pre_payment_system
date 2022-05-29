@@ -1,0 +1,52 @@
+<button type="button" class="rounded-pill my_button btn btn-sm btn-outline-secondary" data-toggle="modal" data-target="#exampleModal">入力</button>
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered " role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <p></p>
+                <h5 class="modal-title" id="exampleModalLabel">入金データ入力</h5>
+                <p></p>
+            </div>
+            <div class="container-fluid mo_container">
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="mo_payment_info_id" class="form-label">入金ID</label>
+                            <input type="number" class="form-control mo_payment_info_id" id="mo_payment_info_id" >    
+                        </div>
+                        <div class="mb-3">
+                            <label for="mo_input_date" class="form-label">入金日</label>
+                            <input id="mo_input_date" class="form-control" type="text" name="mo_input-date" placeholder="yyyy-mm-dd">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mo_customer_name" class="form-label">得意先名称</label>
+                            <input type="text" class="form-control" id="mo_customer_name" maxlength="30">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mo_bank_name" class="form-label">取引銀行名</label>
+                            <input type="text" class="form-control" id="mo_bank_name" maxlength="30">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mo_kind_name" class="form-label">種別名</label>
+                            <input type="text" class="form-control" id="mo_kind_name" maxlength="20">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mo_payment_money" class="form-label">金額</label>
+                            <input type="number" class="form-control" id="mo_payment_money">
+                        </div>
+                        <div class="mb-3">
+                            <label for="mo_memo" class="form-label">メモ</label>
+                            <textarea class="form-control" id="mo_memo" rows="3" cols="40"></textarea>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">戻る</button>
+                <button type="button" class="btn btn-primary">登録</button>
+            </div>
+        </div>
+    </div>
+</div>
+
