@@ -19,9 +19,9 @@ def index_ajax(request):
     except:
         selected_customer_name = ""
     if  not selected_customer_name:
-        q_customer_name = ~Q(customer_id = "")
+        q_customer_name = ~Q(customer_id__customer_name = "")
     else:
-        q_customer_name = Q(customer_name = selected_customer_name)
+        q_customer_name = Q(customer_id__customer_name = selected_customer_name)
     try :
         selected_bank_name = request.POST['selected_bank_name']
     except:
@@ -35,9 +35,9 @@ def index_ajax(request):
     except:
         selected_kind_name = ""
     if  not selected_kind_name:
-        q_kind_name = ~Q(payment_kind_name = "")
+        q_kind_name = ~Q(payment_kind_id__payment_kind_name = "")
     else:
-        q_kind_name = Q(payment_kind_id = selected_kind_name)
+        q_kind_name = Q(payment_kind_id__payment_kind_name = selected_kind_name)
     try:
         selected_money = request.POST.get('selected_money')
     except:
@@ -60,12 +60,13 @@ def index_ajax(request):
         ).filter(
             payment_date__range=[begin_date,late_date],
         ).filter(
-        #q_customer_name & 
+        q_customer_name & 
         q_bank_name &
-        #q_kind_name &
+        q_kind_name &
         q_money &
         q_memo
         )
+    print(type(payment_info_list[0]))
 
     #取得したobjectの合計値を算出する
     payment_total = my_logic.total_payment(payment_info_list)
