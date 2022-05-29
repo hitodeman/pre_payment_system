@@ -109,6 +109,56 @@ $(function(){
     });
 });
 
+$(function(){
+    $("#id_customer_name,#id_bank_name,#id_kind_name,#id_money_choice,#id_memo_choice").change(function(){
+        let id_ajax = document.getElementById('late_date');
+        let url_ajax = id_ajax.getAttribute('data-url');
+        console.log('select発火テスト');
+        console.log($('[name=customer_name] option:selected').text());
+        console.log($('[name=bank_name] option:selected').text());
+        console.log($('[name=kind_name] option:selected').text());
+        console.log($('[name=money_choice] option:selected').text());
+        console.log($('[name=memo_choice] option:selected').text());
+        $.post(
+            url_ajax, 
+            {
+                begin_date:$('#begin_date').val(),
+                late_date:$('#late_date').val(),
+                selected_customer_name:$('[name=customer_name] option:selected').text(),
+                selected_bank_name:$('[name=bank_name] option:selected').text(),
+                selected_kind_name:$('[name=kind_name] option:selected').text(),
+                selected_money:$('[name=money_choice] option:selected').text(),
+                selected_memo:$('[name=memo_choice] option:selected').text(),
+            },
+            'json')
+            .done(function(response){//動的テーブル生成
+                ajax_data = '<tr>'
+                $.each(response.jpay, function(idx, obj) {
+                    if (obj.payment_valid_flg) {
+                        ajax_data += '<td><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" checked disabled="disabled"><label class="form-check-label" for="flexCheckDefault"></label></div></td>'
+                        } 
+                    else{
+                        ajax_data += '<td><div class="form-check"><input class="form-check-input" type="checkbox" value="" id="flexCheckDefault" disabled="disabled"><label class="form-check-label" for="flexCheckDefault"></label></div></td>'
+                        }
+                    ajax_data +=  '<td>'+obj.id+'</td>'
+                    ajax_data +=  '<td>'+obj.payment_date+'</td>'
+                    ajax_data +=  '<td>'+obj.customer_name+'</td>'
+                    ajax_data +=  '<td>'+obj.bank_name+'</td>'
+                    ajax_data +=  '<td>'+obj.payment_kind_name+'</td>'
+                    ajax_data +=  '<td>'+obj.payment_money+'</td>'
+                    ajax_data +=  '<td>'+obj.payment_memo+'</td>'
+                    ajax_data += '<td><div class="container"><button type="button" class="mb-12 my_button btn btn-sm btn-outline-secondary " data-toggle="modal" data-target="#payment_modal'+obj.id+'">編集</button></div></td></tr>'
+                });
+                ajax_data += '</tr>'
+                $('#payment_form').empty();
+                $('#payment_totalDisp').empty();
+                $('#payment_form').append(ajax_data);
+                payment_totalDisp = '<p class="total-money text-right">合計金額　　'+response.payment_total+'円</p>'
+                $('#payment_totalDisp').append(payment_totalDisp);
+                });
+    });
+});
+
 function computeDate(year, month) {
     var dt = new Date(year, month - 1);
     return dt;

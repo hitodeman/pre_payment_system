@@ -31,7 +31,6 @@ def index(request):
 
     #取得したobjectの合計値を算出する
     payment_total = my_logic.total_payment(payment_obj_list)
-    print(payment_total)
     payment_form_list  = my_logic.payment_form_list(payment_obj_list)
 
     nav_key = 0

@@ -36,16 +36,16 @@ class MyModelChoiceField(ModelChoiceField):
 # forms.py
 
 class CustomerChoiceForm(forms.ModelForm):
-    customer_name = forms.ModelChoiceField(M_CUSTOMER.objects.distinct().values_list("customer_name", flat=True),empty_label="取引先選択")
+    customer_name = forms.ModelChoiceField(M_CUSTOMER.objects.distinct().values_list("customer_name", flat=True),empty_label="")
 
     class Meta:
         model = M_CUSTOMER
         fields = ('customer_name',)
 
 class TPChoiceForm(forms.ModelForm):
-    bank_name = forms.ModelChoiceField(T_PAYMENT.objects.distinct().values_list("bank_name", flat=True),empty_label="銀行選択")
-    money_choice = forms.ModelChoiceField(T_PAYMENT.objects.distinct().values_list("payment_money", flat=True),empty_label="金額選択")
-    memo_choice = forms.ModelChoiceField(T_PAYMENT.objects.distinct().values_list("payment_memo", flat=True),empty_label="メモ選択")
+    bank_name = forms.ModelChoiceField(T_PAYMENT.objects.distinct().values_list("bank_name", flat=True),empty_label="")
+    money_choice = forms.ModelChoiceField(T_PAYMENT.objects.distinct().values_list("payment_money", flat=True),empty_label="")
+    memo_choice = forms.ModelChoiceField(T_PAYMENT.objects.distinct().values_list("payment_memo", flat=True),empty_label="")
 
     class Meta:
         model = T_PAYMENT
@@ -56,7 +56,7 @@ class TPChoiceForm(forms.ModelForm):
             )
 
 class KindChoiceForm(forms.ModelForm):
-    kind_name = forms.ModelChoiceField(M_PAYMENT_KIND.objects.distinct().values_list("payment_kind_name", flat=True),empty_label="種別選択")
+    kind_name = forms.ModelChoiceField(M_PAYMENT_KIND.objects.distinct().values_list("payment_kind_name", flat=True),empty_label="")
 
     class Meta:
         model = M_PAYMENT_KIND
