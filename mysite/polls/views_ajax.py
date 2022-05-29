@@ -54,7 +54,7 @@ def index_ajax(request):
         q_memo = ~Q(payment_memo = "")
     else:
         q_memo = Q(payment_memo = selected_memo)
-    print(f'selected_customer_name:{selected_customer_name},selected_bank_name:{selected_bank_name},selected_kind_name:{selected_kind_name},selected_money:{selected_money},selected_memo:{selected_memo}')
+#    print(f'selected_customer_name:{selected_customer_name},selected_bank_name:{selected_bank_name},selected_kind_name:{selected_kind_name},selected_money:{selected_money},selected_memo:{selected_memo}')
 
     payment_info_list = T_PAYMENT.objects.select_related('customer_id','payment_kind_id'
         ).filter(
@@ -66,7 +66,6 @@ def index_ajax(request):
         q_money &
         q_memo
         )
-    print(type(payment_info_list[0]))
 
     #取得したobjectの合計値を算出する
     payment_total = my_logic.total_payment(payment_info_list)
